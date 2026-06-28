@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Químico de pH</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="sim-container">
+        <h1>Simulador de Mezclas y pH</h1>
+        <p class="subtitle">Agua (H₂O), Vinagre (CH₃COOH) y Bicarbonato (NaHCO₃)</p>
+
+        <div class="layout">
+            <div class="panel controls">
+                <h2>Controles de Mezcla</h2>
+                
+                <div class="control-group">
+                    <label>Agua: <span id="val-agua">100</span> mL</label>
+                    <input type="range" id="input-agua" min="10" max="500" value="100">
+                </div>
+
+                <div class="control-group">
+                    <label>Vinagre (Ácido): <span id="val-vinagre">0</span> mL</label>
+                    <input type="range" id="input-vinagre" min="0" max="200" value="0">
+                </div>
+
+                <div class="control-group">
+                    <label>Bicarbonato (Base): <span id="val-bicarbonato">0</span> g</label>
+                    <input type="range" id="input-bicarbonato" min="0" max="50" value="0">
+                </div>
+
+                <div class="control-group">
+                    <label>Temperatura: <span id="val-temp">25</span> °C</label>
+                    <input type="range" id="input-temp" min="0" max="100" value="25">
+                </div>
+            </div>
+
+            <div class="panel visualizer">
+                <div class="beaker-container">
+                    <div class="beaker" id="beaker">
+                        <div class="liquid" id="liquid"></div>
+                        <div class="bubbles" id="bubbles"></div>
+                    </div>
+                </div>
+
+                <div class="meter-container">
+                    <div class="ph-display" id="ph-box">
+                        <div class="ph-label">pH MEDIDO</div>
+                        <div class="ph-value" id="ph-value">7.00</div>
+                        <div class="ph-status" id="ph-status">Neutro</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
